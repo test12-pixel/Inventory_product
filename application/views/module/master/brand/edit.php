@@ -93,55 +93,6 @@
                 -->
             </div>
         </div>
-
-        <!-- Brand Listing -->
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Brand List</h3>
-                    </div>
-                    <div class="box-body table-responsive no-padding">
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Brand Name</th>
-                                    <th>Brand Code</th>
-                                    <th>Manufacturer</th>
-                                    <th>Country</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!--
-                                <?php
-                                // if (!empty($brandList)) {
-                                //     $i = 1;
-                                //     foreach ($brandList as $brand) {
-                                ?>
-                                <tr>
-                                    <td><?php // echo $i++; ?></td>
-                                    <td><?php // echo $brand->brand_name; ?></td>
-                                    <td><?php // echo $brand->brand_code; ?></td>
-                                    <td><?php // echo $brand->manufacturer; ?></td>
-                                    <td><?php // echo $brand->origin_country; ?></td>
-                                    <td>
-                                        <?php // echo ($brand->status == 1) ? 'Active' : 'Inactive'; ?>
-                                    </td>
-                                </tr>
-                                <?php // } } else { ?>
-                                -->
-                                <tr>
-                                    <td colspan="6" class="text-center">No records found.</td>
-                                </tr>
-                                <!-- <?php // } ?> -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 </div>
 

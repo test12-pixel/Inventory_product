@@ -67,7 +67,7 @@
                  <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th>Product Name</th>
+                      <th>Name</th>
                       <th>Category</th>
                       <th>Brand</th>
                       <th>Size / Volume</th>

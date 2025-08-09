@@ -95,13 +95,15 @@ $route['roleListing/(:num)/(:num)'] = "roles/roleListing/$1/$2";
 
 
 
-
+/*Module master routes*/
 $route['productListing'] = "module/product/productListing";
-
 $route['brandListing'] = "module/brand/brandListing";
-
 $route['supplierListing'] = "module/supplier/supplierListing";
+$route['unitListing'] = "module/unit/unitListing";
 
-
+$route['purchase'] = 'module/purchase/index';
+$route['purchase/add'] = 'module/purchase/add';
+$route['purchase/edit/(:num)'] = 'module/purchase/edit/$1';
+$route['purchase/delete/(:num)'] = 'module/purchase/delete/$1';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

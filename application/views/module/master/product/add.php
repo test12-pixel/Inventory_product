@@ -26,7 +26,7 @@
             <!-- Product Name -->
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="product_name">Product Name</label>
+                    <label for="product_name">Name</label>
                     <input type="text" class="form-control required" id="product_name" name="product_name" maxlength="100" />
                 </div>
             </div>

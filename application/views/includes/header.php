@@ -44,7 +44,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>CI</b>AS</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>CodeInsect</b>AS</span>
+           <img src="<?php echo base_url(); ?>assets/images/logo.png" class="logo-image logo-lg" alt="logo Image" />
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -100,7 +100,7 @@
         <section class="sidebar">
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">MAIN NAVIGATION</li>
+          <!--  <li class="header">MAIN NAVIGATION</li> -->
             <li>
               <a href="<?php echo base_url(); ?>dashboard">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
@@ -150,10 +150,10 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url(); ?>productListing"><i class="fa fa-circle-o"></i> Product</a></li>
-                <li><a href="<?php echo base_url(); ?>brandListing"><i class="fa fa-circle-o"></i> Brand</a></li>
-                <li><a href="<?php echo base_url(); ?>supplierListing"><i class="fa fa-circle-o"></i> Supplier</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Unit</a></li>
+                <li><a href="<?php echo base_url(); ?>productListing"><i class="fa fa-cube"></i> Product</a></li>
+                <li><a href="<?php echo base_url(); ?>brandListing"><i class="fa fa-registered"></i> Brand</a></li>
+                <li><a href="<?php echo base_url(); ?>supplierListing"><i class="fa fa-truck"></i> Supplier</a></li>
+                <li><a href="<?php echo base_url(); ?>unitListing"><i class="fa fa-balance-scale"></i> Unit</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Setting</a></li>
               </ul>
             </li>
@@ -238,3 +238,45 @@
         </section>
         <!-- /.sidebar -->
       </aside>
+
+
+ <style>
+/* Center logo in header */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centers horizontally */
+    height: 50px; /* matches AdminLTE header height */
+    background-color: #FFA500; /* fallback in case image doesn't load */
+}
+
+/* Adjust logo image */
+.logo-image {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Change top header color to light orange */
+.main-header .navbar {
+    background-color: teal !important; /* light orange */
+}
+
+/* Optional: change sidebar toggle hover */
+.main-header .navbar .sidebar-toggle:hover {
+    background-color: #e59400 !important; /* slightly darker orange */
+}
+.skin-blue .main-header .logo {
+   background-color:floralwhite !important;; 
+}
+
+.skin-blue .wrapper,.skin-blue .main-sidebar,.skin-blue .left-side {
+    background-color: teal !important;
+}
+body {
+    font-size: 18px !important;
+}
+.treeview-menu>li>a {
+   font-size: 18px !important;
+}
+
+</style>

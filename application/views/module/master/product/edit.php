@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-md-6">                                
                                     <div class="form-group">
-                                        <label for="product_name">Product Name</label>
+                                        <label for="product_name">Name</label>
                                         <input type="text" class="form-control" id="product_name" name="product_name" required />
                                     </div>
                                     <div class="form-group">
@@ -109,65 +109,6 @@
                     </div>
                 </div>
                 -->
-            </div>
-        </div>
-
-        <!-- Product Listing -->
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Product Inventory List</h3>
-                    </div>
-                    <div class="box-body table-responsive no-padding">
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Product</th>
-                                    <th>Brand</th>
-                                    <th>Size</th>
-                                    <th>Cost Price</th>
-                                    <th>Selling Price</th>
-                                    <th>Stock Qty</th>
-                                    <th>Supplier</th>
-                                    <th>Category</th>
-                                    <th>Expiry</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!--
-                                <?php
-                                // if (!empty($productList)) {
-                                //     $i = 1;
-                                //     foreach ($productList as $product) {
-                                ?>
-                                <tr>
-                                    <td><?php // echo $i++; ?></td>
-                                    <td><?php // echo $product->name; ?></td>
-                                    <td><?php // echo $product->brand; ?></td>
-                                    <td><?php // echo $product->size; ?></td>
-                                    <td><?php // echo $product->cost_price; ?></td>
-                                    <td><?php // echo $product->selling_price; ?></td>
-                                    <td><?php // echo $product->stock_qty; ?></td>
-                                    <td><?php // echo $product->supplier_name; ?></td>
-                                    <td><?php // echo $product->category; ?></td>
-                                    <td><?php // echo $product->expiry_date; ?></td>
-                                    <td>
-                                        <?php // echo ($product->status == 1) ? 'Active' : 'Inactive'; ?>
-                                    </td>
-                                </tr>
-                                <?php // } } else { ?>
-                                -->
-                                <tr>
-                                    <td colspan="11" class="text-center">No records found.</td>
-                                </tr>
-                                <!-- <?php // } ?> -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
