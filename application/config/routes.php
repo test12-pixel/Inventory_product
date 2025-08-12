@@ -100,6 +100,9 @@ $route['productListing'] = "module/product/productListing";
 $route['brandListing'] = "module/brand/brandListing";
 $route['supplierListing'] = "module/supplier/supplierListing";
 $route['unitListing'] = "module/unit/unitListing";
+$route['categoryListing'] = "module/category/categoryListing";
+$route['sizeListing'] = "module/size/sizeListing";
+
 
 $route['purchase'] = 'module/purchase/index';
 $route['purchase/add'] = 'module/purchase/add';

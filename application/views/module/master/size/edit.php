@@ -1,35 +1,41 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            <i class="fa fa-tags" aria-hidden="true"></i> Wine Shop Inventory
-            <small>Add / Edit Brand</small>
+            <i class="fa fa-arrows-alt" aria-hidden="true"></i> Wine Shop Inventory
+            <small>Add / Edit Size</small>
         </h1>
     </section>
+
     <section class="content">
         <div class="row">
             <!-- Left column -->
             <div class="col-md-12">
                 <div class="box box-primary">
-                    <div class="box-header">
-                        <h3 class="box-title">Enter Brand Details</h3>
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Enter Size Details</h3>
                     </div>
 
-                    <form role="form" action="#" method="post" id="editBrand">
+                    <form role="form" action="#" method="post" id="editSize">
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-md-6"> 
-                                    <!-- Brand Name -->
+                                <!-- Size Name -->
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="brand_name">Name</label>
-                                        <input type="text" class="form-control" id="brand_name" name="brand_name" required />
+                                        <label for="size_name">Name <span class="text-danger">*</span></label>
+                                        <input type="text" 
+                                               class="form-control" 
+                                               id="size_name" 
+                                               name="size_name" 
+                                               placeholder="Enter size name" 
+                                               required />
                                     </div>
                                 </div>
 
+                                <!-- Status -->
                                 <div class="col-md-6">
-                                    <!-- Status -->
                                     <div class="form-group">
-                                        <label for="status">Status</label>
-                                        <select class="form-control" id="status" name="status">
+                                        <label for="status">Status <span class="text-danger">*</span></label>
+                                        <select class="form-control" id="status" name="status" required>
                                             <option value="">Select</option>
                                             <option value="1">Active</option>
                                             <option value="0">Inactive</option>
@@ -40,25 +46,25 @@
                         </div><!-- /.box-body -->
 
                         <div class="box-footer">
-                            <input type="submit" class="btn btn-primary" value="Submit" />
-                            <input type="reset" class="btn btn-default" value="Reset" />
-                            <a href="<?php echo base_url(); ?>brandListing" class="btn btn-default">Back</a>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-default">Reset</button>
+                            <a href="<?php echo base_url(); ?>sizeListing" class="btn btn-default">Back
+                            </a>
                         </div>
                     </form>
                 </div>
             </div>
 
-            <!-- Right column for flash messages -->
+            <!-- Right column for flash messages (optional) -->
+            <!--
             <div class="col-md-4">
-                <!--
                 <?php
-                // $this->load->helper('form');
                 // $error = $this->session->flashdata('error');
                 // if($error) {
                 ?>
                 <div class="alert alert-danger alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <?php // echo $this->session->flashdata('error'); ?>                    
+                    <?php // echo $error; ?>                    
                 </div>
                 <?php // } ?>
 
@@ -68,7 +74,7 @@
                 ?>
                 <div class="alert alert-success alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <?php // echo $this->session->flashdata('success'); ?>
+                    <?php // echo $success; ?>
                 </div>
                 <?php // } ?>
 
@@ -77,12 +83,12 @@
                         <?php // echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
                     </div>
                 </div>
-                -->
             </div>
+            -->
         </div>
     </section>
 </div>
 
 <!-- Optional JS -->
-<!-- <script src="<?php echo base_url(); ?>assets/js/addBrand.js" type="text/javascript"></script> -->
-<script src="<?php echo base_url(); ?>assets/js/addRole.js" type="text/javascript"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/js/addSize.js"></script> -->
+<script src="<?php echo base_url(); ?>assets/js/addRole.js"></script>

@@ -2,7 +2,7 @@
     <section class="content-header">
         <h1>
             <i class="fa fa-tags" aria-hidden="true"></i> Wine Shop Inventory
-            <small>Add / Edit Brand</small>
+            <small>Add / Edit Category</small>
         </h1>
     </section>
     <section class="content">
@@ -11,17 +11,17 @@
             <div class="col-md-12">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Enter Brand Details</h3>
+                        <h3 class="box-title">Enter Category Details</h3>
                     </div>
 
-                    <form role="form" action="#" method="post" id="editBrand">
+                    <form role="form" action="#" method="post" id="editCategory">
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6"> 
-                                    <!-- Brand Name -->
+                                    <!-- Category Name -->
                                     <div class="form-group">
-                                        <label for="brand_name">Name</label>
-                                        <input type="text" class="form-control" id="brand_name" name="brand_name" required />
+                                        <label for="category_name">Name</label>
+                                        <input type="text" class="form-control" id="category_name" name="category_name" required />
                                     </div>
                                 </div>
 
@@ -42,7 +42,7 @@
                         <div class="box-footer">
                             <input type="submit" class="btn btn-primary" value="Submit" />
                             <input type="reset" class="btn btn-default" value="Reset" />
-                            <a href="<?php echo base_url(); ?>brandListing" class="btn btn-default">Back</a>
+                            <a href="<?php echo base_url(); ?>categoryListing" class="btn btn-default">Back</a>
                         </div>
                     </form>
                 </div>
@@ -84,5 +84,5 @@
 </div>
 
 <!-- Optional JS -->
-<!-- <script src="<?php echo base_url(); ?>assets/js/addBrand.js" type="text/javascript"></script> -->
+<!-- <script src="<?php echo base_url(); ?>assets/js/addCategory.js" type="text/javascript"></script> -->
 <script src="<?php echo base_url(); ?>assets/js/addRole.js" type="text/javascript"></script>

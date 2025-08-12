@@ -2,29 +2,31 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            <i class="fa fa-tags" aria-hidden="true"></i> Brand Management
-            <small>Add / Edit Brand</small>
+            <i class="fa fa-arrows-v" aria-hidden="true"></i> Size Management
+            <small>Add / Edit Size</small>
         </h1>
     </section>
+
     <section class="content">
         <div class="row">
-            <!-- left column -->
+            <!-- Left column -->
             <div class="col-md-12">
-                <!-- general form elements -->
+                <!-- General form elements -->
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Enter Brand Details</h3>
+                        <h3 class="box-title">Enter Size Details</h3>
                     </div><!-- /.box-header -->
+
                     <!-- form start -->
                     <!-- <?php $this->load->helper("form"); ?> -->
-                    <form role="form" id="addBrand" action="#" method="post">
+                    <form role="form" id="addSize" action="#" method="post">
                         <div class="box-body">
                             <div class="row">
-                                <!-- Brand Name -->
+                                <!-- Size Name -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="brand_name">Name</label>
-                                        <input type="text" class="form-control required" id="brand_name" name="brand_name" maxlength="100" />
+                                        <label for="size_name">Name</label>
+                                        <input type="text" class="form-control required" id="size_name" name="size_name" maxlength="100" />
                                     </div>
                                 </div>
 
@@ -34,8 +36,6 @@
                                         <label for="status">Status</label>
                                         <select class="form-control" id="status" name="status">
                                             <option value="">Select Status</option>
-                                            <!-- <option value="<?= ACTIVE ?>">Active</option> -->
-                                            <!-- <option value="<?= INACTIVE ?>">Inactive</option> -->
                                             <option value="1">Active</option>
                                             <option value="0">Inactive</option>
                                         </select>
@@ -47,7 +47,7 @@
                         <div class="box-footer">
                             <input type="submit" class="btn btn-primary" value="Submit" />
                             <input type="reset" class="btn btn-default" value="Reset" />
-                            <a href="<?php echo base_url(); ?>/brandListing" class="btn btn-default">Back</a>
+                            <a href="<?php echo base_url(); ?>/sizeListing" class="btn btn-default">Back</a>
                         </div>
                     </form>
                 </div>
@@ -86,4 +86,4 @@
     </section>
 </div>
 
-<!-- <script src="<?php echo base_url(); ?>assets/js/addRole.js" type="text/javascript"></script> -->
+<!-- <script src="<?php echo base_url(); ?>assets/js/addSize.js" type="text/javascript"></script> -->

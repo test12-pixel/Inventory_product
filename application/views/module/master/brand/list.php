@@ -52,11 +52,9 @@
                  <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th>Brand Name</th>
-                      <th>Manufacturer</th>
-                      <th>Origin</th>
+                      <th>ID</th>
+                      <th>Name</th>
                       <th>Status</th>
-                      <th>Created On</th>
                       <th class="text-center">Actions</th>
                     </tr>
                   </thead>
@@ -64,9 +62,8 @@
                     <?php //if (!empty($brandRecords)) {
                       //foreach ($brandRecords as $record) { ?>
                         <tr>
+                          <td><?php //echo $record->id; ?></td>
                           <td><?php //echo $record->brand_name; ?></td>
-                          <td><?php //echo $record->manufacturer; ?></td>
-                          <td><?php //echo $record->origin; ?></td>
                           <td>
                             <?php //if ($record->status == 'Active') { ?>
                               <span class="label label-success">Active</span>
@@ -74,7 +71,6 @@
                               <span class="label label-warning">Inactive</span>
                             <?php //} ?>
                           </td>
-                          <td><?php //echo date("d-m-Y", strtotime($record->created_at)); ?></td>
                           <td class="text-center">
                             <a class="btn btn-sm btn-info" href="<?php echo base_url().'/module/brand/edit/'; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
                             <a class="btn btn-sm btn-danger deleteBrand" href="#" data-brandid="<?php //echo $record->id; ?>" title="Delete"><i class="fa fa-trash"></i></a>
@@ -82,7 +78,7 @@
                         </tr>
                       <?php //} 
                     //} else { ?>
-                      <tr><td colspan="6" class="text-center">No records found.</td></tr>
+                      <tr><td colspan="4" class="text-center">No records found.</td></tr>
                     <?php //} ?>
                   </tbody>
                 </table>

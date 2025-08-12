@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-balance-scale" aria-hidden="true"></i> Unit Management
+        <i class="fa fa-tags" aria-hidden="true"></i> Category Management
         <small>Add, Edit, Delete</small>
       </h1>
     </section>
@@ -11,17 +11,31 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>module/unit/add"><i class="fa fa-plus"></i> Add New Unit</a>
+                    <a class="btn btn-primary" href="<?php echo base_url(); ?>module/category/add"><i class="fa fa-plus"></i> Add New Category</a>
                 </div>
             </div>
         </div>
 
-        <!-- Table Section -->
+        <div class="row">
+            <div class="col-md-12">
+                <?php
+                    //$this->load->helper('form');
+                    //$error = $this->session->flashdata('error');
+                    //if($error) {
+                ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php //echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Unit List</h3>
+                    <h3 class="box-title">Category List</h3>
                     <div class="box-tools">
                         <form action="#" method="POST" id="searchList">
                             <div class="input-group">
@@ -45,22 +59,21 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <?php 
-                    // if (!empty($unitRecords)) {
-                    //   foreach ($unitRecords as $record) { ?>
+                    <?php //if (!empty($categoryRecords)) {
+                      //foreach ($categoryRecords as $record) { ?>
                         <tr>
                           <td><?php //echo $record->id; ?></td>
-                          <td><?php //echo $record->unit_name; ?></td>
+                          <td><?php //echo $record->category_name; ?></td>
                           <td>
-                            <?php //if ($record->status == 1) { ?>
+                            <?php //if ($record->status == 'Active') { ?>
                               <span class="label label-success">Active</span>
                             <?php //} else { ?>
                               <span class="label label-warning">Inactive</span>
                             <?php //} ?>
                           </td>
                           <td class="text-center">
-                            <a class="btn btn-sm btn-info" href="<?php echo base_url().'module/unit/edit/'; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                            <a class="btn btn-sm btn-danger deleteUnit" href="#" data-unitid="<?php //echo $record->id; ?>" title="Delete"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-sm btn-info" href="<?php echo base_url().'/module/category/edit/'; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-sm btn-danger deleteCategory" href="#" data-categoryid="<?php //echo $record->id; ?>" title="Delete"><i class="fa fa-trash"></i></a>
                           </td>
                         </tr>
                       <?php //} 
@@ -87,7 +100,7 @@
             e.preventDefault();            
             var link = jQuery(this).get(0).href;            
             var value = link.substring(link.lastIndexOf('/') + 1);
-            jQuery("#searchList").attr("action", baseURL + "unitListing/" + value);
+            jQuery("#searchList").attr("action", baseURL + "categoryListing/" + value);
             jQuery("#searchList").submit();
         });
     });
