@@ -110,3 +110,7 @@ $route['purchase/edit/(:num)'] = 'module/purchase/edit/$1';
 $route['purchase/delete/(:num)'] = 'module/purchase/delete/$1';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
+
+
+$route['master/supplier/add'] = 'master/supplier/add';
+$route['master/supplierListing'] = 'master/supplier/supplierListing';
