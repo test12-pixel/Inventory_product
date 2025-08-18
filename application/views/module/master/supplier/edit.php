@@ -83,7 +83,7 @@
                             <input type="hidden" name="id" value="<?php echo $record->id; ?>">
                             <input type="submit" class="btn btn-primary" value="Update" />
                             <input type="reset" class="btn btn-default" value="Reset" />
-                            <a href="<?php echo base_url('module/supplier/supplierListing'); ?>" class="btn btn-default">Back</a>
+                            <a href="<?php echo base_url('supplierListing'); ?>" class="btn btn-default">Back</a>
                         </div>
                     </form>
                 </div>

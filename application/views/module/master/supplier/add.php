@@ -76,7 +76,7 @@
                         <div class="box-footer">
                             <input type="submit" class="btn btn-primary" value="Submit" />
                             <input type="reset" class="btn btn-default" value="Reset" />
-                            <a href="<?php echo base_url('master/supplierListing'); ?>" class="btn btn-default">Back</a> 
+                            <a href="<?php echo base_url('supplierListing'); ?>" class="btn btn-default">Back</a> 
                         </div>
                     </form>
                 </div>

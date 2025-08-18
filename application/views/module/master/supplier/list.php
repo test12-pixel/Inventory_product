@@ -70,7 +70,7 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>Sr No</th>
                                     <th>Organisation</th>
                                     <th>Name</th>
                                     <th>Phone</th>
@@ -83,9 +83,11 @@
                             </thead>
                             <tbody>
                             <?php if (!empty($supplierRecords) && is_array($supplierRecords)) { ?>
-                                <?php foreach ($supplierRecords as $record) { ?>
+                                <?php 
+                                $srNo = isset($page) ? $page + 1 : 1;
+                                foreach ($supplierRecords as $record) { ?>
                                     <tr>
-                                        <td><?php echo $record->id; ?></td>
+                                         <td><?php echo $srNo++; ?></td>
                                         <td><?php echo isset($record->organisation) ? $record->organisation : '-'; ?></td>
                                         <td><?php echo $record->supplier_name; ?></td>
                                         <td><?php echo $record->phone; ?></td>

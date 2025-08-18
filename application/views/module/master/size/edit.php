@@ -2,7 +2,7 @@
     <section class="content-header">
         <h1>
             <i class="fa fa-arrows-alt" aria-hidden="true"></i> Wine Shop Inventory
-            <small>Add / Edit Size</small>
+            <small>Edit Size</small>
         </h1>
     </section>
 
@@ -12,21 +12,28 @@
             <div class="col-md-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Enter Size Details</h3>
+                        <h3 class="box-title">Update Size Details</h3>
                     </div>
 
-                    <form role="form" action="#" method="post" id="editSize">
+                    <!-- PHP Form Helper -->
+                    <!-- <?php $this->load->helper("form"); ?> -->
+
+                    <form role="form" action="<?php echo base_url(); ?>module/size/updateSize" method="post" id="editSize">
                         <div class="box-body">
                             <div class="row">
+                                <!-- Hidden ID -->
+                                <input type="hidden" name="size_Id" value="<?php echo $sizeInfo->id; ?>">
+
                                 <!-- Size Name -->
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="size_name">Name <span class="text-danger">*</span></label>
-                                        <input type="text" 
-                                               class="form-control" 
-                                               id="size_name" 
-                                               name="size_name" 
-                                               placeholder="Enter size name" 
+                                        <input type="text"
+                                               class="form-control required"
+                                               id="size_name"
+                                               name="size_name"
+                                               value="<?php echo $sizeInfo->name; ?>"
+                                               placeholder="Enter size name"
                                                required />
                                     </div>
                                 </div>
@@ -37,8 +44,8 @@
                                         <label for="status">Status <span class="text-danger">*</span></label>
                                         <select class="form-control" id="status" name="status" required>
                                             <option value="">Select</option>
-                                            <option value="1">Active</option>
-                                            <option value="0">Inactive</option>
+                                            <option value="1" <?php if($sizeInfo->status == 1) {echo "selected";} ?>>Active</option>
+                                            <option value="0" <?php if($sizeInfo->status == 0) {echo "selected";} ?>>Inactive</option>
                                         </select>
                                     </div>
                                 </div>
@@ -46,16 +53,14 @@
                         </div><!-- /.box-body -->
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
-                            <a href="<?php echo base_url(); ?>sizeListing" class="btn btn-default">Back
-                            </a>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <a href="<?php echo base_url(); ?>sizeListing" class="btn btn-default">Back</a>
                         </div>
                     </form>
                 </div>
             </div>
 
-            <!-- Right column for flash messages (optional) -->
+            <!-- Right column (optional for flash messages) -->
             <!--
             <div class="col-md-4">
                 <?php
@@ -90,5 +95,4 @@
 </div>
 
 <!-- Optional JS -->
-<!-- <script src="<?php echo base_url(); ?>assets/js/addSize.js"></script> -->
-<script src="<?php echo base_url(); ?>assets/js/addRole.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/js/editSize.js"></script> -->

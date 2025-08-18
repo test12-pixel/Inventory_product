@@ -4,71 +4,130 @@ require APPPATH . '/libraries/BaseController.php';
 
 class Size extends BaseController
 {
-    /**
-     * Constructor
-     */
     public function __construct()
     {
         parent::__construct();
-        //$this->load->model('size_model', 'sm');
         $this->isLoggedIn();   
+        $this->load->model('master/Size_model', 'size'); 
+        $this->load->library('form_validation');
     }
 
-    /**
-     * Default routing method
-     */
     public function index()
     {
         redirect('sizeListing');
     }
-    
-    /**
-     * Load size list
-     */
-    function sizeListing()
-    {   
-        if(!$this->isAdmin())
+
+    public function sizeListing()
+    {
+        $searchText = $this->input->post('searchText');
+        $data['searchText'] = $searchText;
+
+        $this->load->library('pagination');
+        $count = count($this->size->sizeListing($searchText));
+
+        $returns = $this->paginationCompress("module/size/sizeListing/", $count, 10);
+        $data['sizeRecords'] = $this->size->sizeListing($searchText, $returns["page"], $returns["segment"]);
+
+        $this->global['pageTitle'] = 'Size Management : Listing';
+        $this->loadViews("module/master/size/list", $this->global, $data, NULL);
+    }
+
+    public function add()
+    {
+        $this->global['pageTitle'] = 'Add New Size';
+        $this->loadViews("module/master/size/add", $this->global, NULL, NULL);
+    }
+
+    public function addNewSize()
+    {
+        // echo $this->input->post('size_name');
+        // echo $this->input->post('status');
+        // die;
+
+        $this->form_validation->set_rules('size_name','Size Name','trim|required|max_length[128]');
+
+        if($this->form_validation->run() == FALSE)
         {
-            $this->loadThis();
+            $this->add();
         }
         else
-        {        
-            $this->global['pageTitle'] = 'CodeInsect : Size Listing';
-            $this->loadViews("module/master/size/list", $this->global, NULL, NULL);
+        {
+            $sizeInfo = [
+                'name' => $this->input->post('size_name'),
+                'status' => $this->input->post('status')
+            ];
+            
+            $result = $this->size->addNewSize($sizeInfo);
+
+            if($result > 0){
+                $this->session->set_flashdata('success', 'New Size created successfully');
+            } else {
+                $this->session->set_flashdata('error', 'Size creation failed');
+            }
+
+            redirect('sizeListing');
         }
     }
 
-    /**
-     * Load add new size form
-     */
-    function add()
+   
+    public function edit($sizeId = NULL)
     {
-        if(!$this->isAdmin())
-        {
+        if(!$this->isAdmin() || $sizeId == null) {
             $this->loadThis();
-        }
-        else
-        {
-            $this->global['pageTitle'] = 'CodeInsect : Add New Size';
-            $this->loadViews("module/master/size/add", $this->global, NULL, NULL);
+        } else {
+            $data['sizeInfo'] = $this->size->getSizeInfo($sizeId);
+
+            $this->global['pageTitle'] = 'Size Management : Edit Size';
+            $this->loadViews("module/master/size/edit", $this->global, $data, NULL);
         }
     }
 
-    /**
-     * Load size edit form
-     * @param number $sizeId
-     */
-    function edit($sizeId = NULL)
+
+    public function updateSize()
     {
-        if(!$this->isAdmin())
-        {
+        if(!$this->isAdmin()) {
             $this->loadThis();
+        } else {
+            $sizeId = $this->input->post('size_Id');
+            //echo $sizeId;
+            //die;
+            $this->form_validation->set_rules('size_name','Size Name','trim|required|max_length[128]');
+            $this->form_validation->set_rules('status','Status','required');
+
+            if($this->form_validation->run() == FALSE) {
+                $this->edit($brandId);
+            } else {
+                $sizeInfo = array(
+                    'name'=>$this->input->post('size_name'),
+                    'status'=>$this->input->post('status')
+                );
+
+                $result = $this->size->updateSize($sizeInfo, $sizeId);
+
+                if($result == true){
+                    $this->session->set_flashdata('success', 'Brand updated successfully');
+                } else {
+                    $this->session->set_flashdata('error', 'Brand updation failed');
+                }
+
+                redirect('sizeListing');
+            }
         }
-        else
-        {
-            $this->global['pageTitle'] = 'CodeInsect : Edit Size';
-            $this->loadViews("module/master/size/edit", $this->global, NULL);
+    }
+
+    public function deleteSize($id = NULL)
+    {
+        if($id == null){
+            redirect('sizeListing');
         }
+
+        $result = $this->size->deleteSize($id);
+
+        if ($result == true) {
+            $this->session->set_flashdata('success', 'Size deleted successfully');
+        } else {
+            $this->session->set_flashdata('error', 'Size deletion failed');
+        }
+        redirect('sizeListing');
     }
 }
-?>

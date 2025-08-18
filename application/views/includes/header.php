@@ -155,7 +155,7 @@
                 <li><a href="<?php echo base_url(); ?>categoryListing"><i class="fa fa-registered"></i> Category</a></li>
                 <li><a href="<?php echo base_url(); ?>sizeListing"><i class="fa fa-registered"></i> Size</a></li>
                 <li><a href="<?php echo base_url(); ?>unitListing"><i class="fa fa-balance-scale"></i> Unit</a></li>
-                <li><a href="<?php echo base_url(); ?>productListing"><i class="fa fa-cube"></i> Product</a></li>
+                <!-- <li><a href="<?php //echo base_url(); ?>productListing"><i class="fa fa-cube"></i> Product</a></li> -->
                 <li><a href="#"><i class="fa fa-circle-o"></i> Setting</a></li>
               </ul>
             </li>

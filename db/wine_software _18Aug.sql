@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 18, 2025 at 11:29 AM
+-- Generation Time: Aug 18, 2025 at 04:59 PM
 -- Server version: 8.0.43-0ubuntu0.22.04.1
 -- PHP Version: 8.2.28
 
@@ -49,6 +49,14 @@ CREATE TABLE `sl_m_brand` (
   `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `sl_m_brand`
+--
+
+INSERT INTO `sl_m_brand` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'wine', 'Inactive', '2025-08-18 18:40:56', '2025-08-18 20:38:18'),
+(4, 'Rum', 'Active', '2025-08-18 22:11:57', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +71,15 @@ CREATE TABLE `sl_m_category` (
   `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `sl_m_category`
+--
+
+INSERT INTO `sl_m_category` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'Category 1', 'Active', '2025-08-18 19:34:55', NULL),
+(3, 'Category 2', 'Inactive', '2025-08-18 19:35:04', '2025-08-18 22:12:14'),
+(4, 'Category 3', 'Active', '2025-08-18 22:12:23', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +93,14 @@ CREATE TABLE `sl_m_size` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sl_m_size`
+--
+
+INSERT INTO `sl_m_size` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(1, '500', 'Active', '2025-08-18 19:55:44', '2025-08-18 22:12:45'),
+(3, '300', 'Active', '2025-08-18 22:12:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -103,7 +128,15 @@ CREATE TABLE `sl_m_supplier` (
 INSERT INTO `sl_m_supplier` (`id`, `organisation`, `supplier_name`, `contact_person`, `email`, `phone`, `address`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Softlab', 'John Smith', NULL, 'john12@gmail.com', '09960309336', 'At-post Amravti Tq-Dist Amravati\r\nAmravati', 1, '2025-08-13 14:56:09', '2025-08-13 14:56:09'),
 (2, 'Softlab', 'John Smith', NULL, 'john@gmail.com', '09960309336', 'At-post Amravti Tq-Dist Amravati\r\nAmravati', 1, '2025-08-13 14:56:47', '2025-08-13 14:56:47'),
-(4, 'Eassyshopkart123', 'John Smith123', NULL, 'bijawe.deepa@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 0, '2025-08-13 15:21:40', '2025-08-13 15:21:51');
+(4, 'Eassyshopkart123', 'John Smith123', NULL, 'bijawe.deepa@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 1, '2025-08-13 15:21:40', '2025-08-18 12:26:27'),
+(8, 'nik', 'John Smith', NULL, 'john12@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 1, '2025-08-18 12:38:35', '2025-08-18 18:08:35'),
+(9, 'test123', 'John Smith', NULL, 'john@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 1, '2025-08-18 16:41:19', '2025-08-18 16:41:26'),
+(10, 'Eassyshopkart', 'John Smith', NULL, 'bijawe.deepa@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 1, '2025-08-18 16:51:00', '2025-08-18 22:21:00'),
+(11, 'Eassyshopkart', 'John Smith', NULL, 'bijawe.deepa@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 1, '2025-08-18 16:51:14', '2025-08-18 22:21:14'),
+(12, 'Eassyshopkart', 'John Smith', NULL, 'bijawe.deepa@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 1, '2025-08-18 16:51:36', '2025-08-18 22:21:36'),
+(13, 'Eassyshopkart', 'John Smith', NULL, 'bijawe.deepa@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 1, '2025-08-18 16:51:45', '2025-08-18 22:21:45'),
+(14, 'Eassyshopkart', 'John Smith', NULL, 'bijawe.deepa@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 0, '2025-08-18 16:51:54', '2025-08-18 22:21:54'),
+(15, 'Eassyshopkart', 'John Smith123', NULL, 'bijawe.deepa@gmail.com', '09960309336', 'At-post Amravti  Tq-Dist Amravati', 1, '2025-08-18 16:52:03', '2025-08-18 22:22:03');
 
 -- --------------------------------------------------------
 
@@ -114,10 +147,18 @@ INSERT INTO `sl_m_supplier` (`id`, `organisation`, `supplier_name`, `contact_per
 CREATE TABLE `sl_m_unit` (
   `id` int UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1 = Active, 0 = Inactive',
+  `status` enum('Active','Inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sl_m_unit`
+--
+
+INSERT INTO `sl_m_unit` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(3, 'unit 1', 'Active', '2025-08-18 22:13:34', NULL),
+(4, 'unit 2', 'Inactive', '2025-08-18 22:13:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -224,7 +265,8 @@ INSERT INTO `tbl_last_login` (`id`, `userId`, `sessionData`, `machineIp`, `userA
 (29, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"Administrator\",\"isAdmin\":\"1\"}', '::1', 'Chrome 136.0.0.0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'Linux', '2025-08-09 15:58:25'),
 (30, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"Administrator\",\"isAdmin\":\"1\"}', '::1', 'Chrome 136.0.0.0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'Linux', '2025-08-12 21:44:55'),
 (31, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"Administrator\",\"isAdmin\":\"1\"}', '::1', 'Chrome 136.0.0.0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'Linux', '2025-08-13 14:11:52'),
-(32, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"Administrator\",\"isAdmin\":\"1\"}', '::1', 'Chrome 136.0.0.0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'Linux', '2025-08-13 17:28:35');
+(32, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"Administrator\",\"isAdmin\":\"1\"}', '::1', 'Chrome 136.0.0.0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'Linux', '2025-08-13 17:28:35'),
+(33, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"Administrator\",\"isAdmin\":\"1\"}', '::1', 'Chrome 136.0.0.0', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36', 'Linux', '2025-08-18 17:54:51');
 
 -- --------------------------------------------------------
 
@@ -332,7 +374,7 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`userId`, `email`, `password`, `name`, `mobile`, `roleId`, `isAdmin`, `isDeleted`, `createdBy`, `createdDtm`, `updatedBy`, `updatedDtm`) VALUES
-(1, 'admin@example.com', '$2y$10$6Y28WIo2Oz.p8xsEMYcCmuvvijXZU8.sRT3737ix.vN1CwGs3NJk6', 'Administrator', '9890098900', 1, 1, 0, 0, '2015-07-01 18:56:49', 1, '2025-08-08 17:30:18'),
+(1, 'admin@example.com', '$2y$10$6Y28WIo2Oz.p8xsEMYcCmuvvijXZU8.sRT3737ix.vN1CwGs3NJk6', 'Nikhil', '9890098900', 1, 1, 0, 0, '2015-07-01 18:56:49', 1, '2025-08-18 12:27:24'),
 (2, 'manager@example.com', '$2y$10$quODe6vkNma30rcxbAHbYuKYAZQqUaflBgc4YpV9/90ywd.5Koklm', 'Manager', '9890098900', 2, 0, 0, 1, '2016-12-09 17:49:56', 1, '2020-02-01 19:36:12'),
 (3, 'employee@example.com', '$2y$10$UYsH1G7MkDg1cutOdgl2Q.ZbXjyX.CSjsdgQKvGzAgl60RXZxpB5u', 'Employee', '9890098900', 3, 0, 1, 1, '2016-12-09 17:50:22', 1, '2019-11-09 18:13:17'),
 (9, 'employee2@example.com', '$2y$10$DBnqnZDQMNW3GASPNJQ2RubfqG1WNupMBP4HKwHYRKQNHgA65Nhly', 'Employee2', '9890098900', 3, 0, 1, 1, '2019-03-26 11:40:50', 1, '2019-11-09 18:12:13'),
@@ -436,31 +478,31 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `sl_m_brand`
 --
 ALTER TABLE `sl_m_brand`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sl_m_category`
 --
 ALTER TABLE `sl_m_category`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sl_m_size`
 --
 ALTER TABLE `sl_m_size`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sl_m_supplier`
 --
 ALTER TABLE `sl_m_supplier`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `sl_m_unit`
 --
 ALTER TABLE `sl_m_unit`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_access_matrix`
@@ -478,7 +520,7 @@ ALTER TABLE `tbl_booking`
 -- AUTO_INCREMENT for table `tbl_last_login`
 --
 ALTER TABLE `tbl_last_login`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tbl_reset_password`
